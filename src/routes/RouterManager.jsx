@@ -1,6 +1,6 @@
 import { useAuth } from '../hooks/useAuth';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import  MainLayout  from '../layouts/MainLayout';
+import MainLayout from '../layouts/MainLayout';
 import { AuthGuard } from '../guards/AuthGuard';
 import AdminLayout from '../layouts/AdminLayout'; // Asegúrate de que la ruta sea correcta
 import Page404 from '../views/Page404'; // Asegúrate de que la ruta sea correcta
@@ -35,7 +35,7 @@ export const RouterManager = () => {
 
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="/cart" element={<Cart />} />
+            <Route path="/cart" element={<AuthGuard redirectTo="/login" isAllow={session?.role === ROLES.CLIENTE}><Cart /></AuthGuard>} />
             <Route path="/profile" element={<AuthGuard redirectTo="/login" isAllow={session?.token}><Profile /></AuthGuard>} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/detail" element={<Detail />} />

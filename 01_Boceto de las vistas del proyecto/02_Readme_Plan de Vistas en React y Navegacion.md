@@ -1,8 +1,10 @@
-### Vistas Públicas
-1. **Página Principal**
+### Vistas Públicas. MainLayout:
+1. **Página Principal** 
    - Barra de navegación
    - Sección hero
    - Publicaciones recientes o destacadas
+   - Gallery
+   - Detail
    - Pie de página
 
 2. **Registro de Usuarios**
@@ -12,21 +14,21 @@
    - Formulario de inicio de sesión
 
 4. **Carrito de Compras**
-   - Vista del carrito de compras
-
-### Vistas Privadas
+   - Vista del carrito de compras (solo perfil cliente)
+______________________________________________________________________
+### Vistas Privadas AdminLayout:
 1. **Mi Perfil**
    - Información del usuario
    - Opcion cerrar sesión
 
 2. **Formulario para Crear una Publicación**
-   - Formulario de publicación
+   - Formulario de publicación (Administrador)
 
 3. **Galería de Publicaciones**
-   - Lista de publicaciones
+   - Lista de publicaciones (Administrador)
 
 4. **Vista de Detalle de una Publicación**
-   - Detalle de publicación
+   - Detalle de publicación (Todos)
 
 5. **Administración de Usuarios** (Administrador)
    - Lista de usuarios
