@@ -53,15 +53,6 @@ const Navigation = () => {
                 <Link className='nav-link' to='/cart'>Carrito de compras</Link>
               </span>
             )}
-            <span className='nav-item me-3'>
-              <Link className='nav-link' to='/create-post'>Crear Publicación</Link>
-            </span>
-            <span className='nav-item me-3'>
-              <Link className='nav-link' to='/post-gallery'>Galería de Publicaciones</Link>
-            </span>
-            <span className='nav-item me-3'>
-              <Link className='nav-link' to='/post-detail'>Detalle de Publicación</Link>
-            </span>
             {cargo === ROLES.ADMIN && (
               <>
                 <span className='nav-item me-3'>

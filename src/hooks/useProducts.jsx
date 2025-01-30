@@ -1,10 +1,6 @@
 import { useContext } from 'react';
-import { ProductContext } from '../context/ProductProvider';
+import { ProductContext } from '../context/ProductProvider'; // Asegúrate de que la ruta sea correcta
 
-export const useAuth = () => {
-	const { products } = useContext(ProductContext);
-
-	return {
-		products,
-	};
+export const useProducts = () => {
+  return useContext(ProductContext);
 };

@@ -2,23 +2,23 @@ import { useAuth } from '../hooks/useAuth';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import MainLayout from '../layouts/MainLayout';
 import { AuthGuard } from '../guards/AuthGuard';
-import AdminLayout from '../layouts/AdminLayout'; // Asegúrate de que la ruta sea correcta
-import Page404 from '../views/Page404'; // Asegúrate de que la ruta sea correcta
-import Cart from '../views/Cart'; // Asegúrate de que la ruta sea correcta
-import Home from '../views/Home'; // Asegúrate de que la ruta sea correcta
-import Login from '../views/Login'; // Asegúrate de que la ruta sea correcta
-import Profile from '../views/Profile'; // Asegúrate de que la ruta sea correcta
-import Register from '../views/Register'; // Asegúrate de que la ruta sea correcta
-import Gallery from '../views/Gallery'; // Asegúrate de que la ruta sea correcta
-import Detail from '../views/Detail'; // Asegúrate de que la ruta sea correcta
-import UserManagement from '../views/PrivateViews/UserManagement'; // Asegúrate de que la ruta sea correcta
-import ProductManagement from '../views/PrivateViews/ProductManagement'; // Asegúrate de que la ruta sea correcta
-import CategoryManagement from '../views/PrivateViews/CategoryManagement'; // Asegúrate de que la ruta sea correcta
-import SupplierOrders from '../views/PrivateViews/SupplierOrders'; // Asegúrate de que la ruta sea correcta
-import CustomerOrders from '../views/PrivateViews/CustomerOrders'; // Asegúrate de que la ruta sea correcta
-import LowStockProducts from '../views/PrivateViews/LowStockProducts'; // Asegúrate de que la ruta sea correcta
-import IncompleteOrders from '../views/PrivateViews/IncompleteOrders'; // Asegúrate de que la ruta sea correcta
-import CreatePost from '../views/PrivateViews/CreatePost'; // Asegúrate de que la ruta sea correcta
+import AdminLayout from '../layouts/AdminLayout';  
+import Page404 from '../views/Page404';  
+import Cart from '../views/Cart';  
+import Home from '../views/Home';  
+import Login from '../views/Login';  
+import Profile from '../views/Profile';  
+import Register from '../views/Register';  
+import Gallery from '../views/Gallery';  
+import Detail from '../views/Detail';  
+import UserManagement from '../views/PrivateViews/UserManagement';  
+import ProductManagement from '../views/PrivateViews/ProductManagement';  
+import CategoryManagement from '../views/PrivateViews/CategoryManagement';  
+import SupplierOrders from '../views/PrivateViews/SupplierOrders';  
+import CustomerOrders from '../views/PrivateViews/CustomerOrders';  
+import LowStockProducts from '../views/PrivateViews/LowStockProducts';  
+import IncompleteOrders from '../views/PrivateViews/IncompleteOrders';  
+import CreatePost from '../views/PrivateViews/CreatePost';  
 import { ROLES } from '../helpers/roles';
 import { RolesProvider } from '../context/RolesContext';
 
@@ -38,7 +38,7 @@ export const RouterManager = () => {
             <Route path="/cart" element={<AuthGuard redirectTo="/login" isAllow={session?.role === ROLES.CLIENTE}><Cart /></AuthGuard>} />
             <Route path="/profile" element={<AuthGuard redirectTo="/login" isAllow={session?.token}><Profile /></AuthGuard>} />
             <Route path="/gallery" element={<Gallery />} />
-            <Route path="/detail" element={<Detail />} />
+            <Route path="/detail/:id" element={<Detail />} />
           </Route>
 
           <Route path="/admin" element={<AuthGuard redirectTo="/profile" isAllow={session?.role === ROLES.ADMIN}><AdminLayout /></AuthGuard>}>

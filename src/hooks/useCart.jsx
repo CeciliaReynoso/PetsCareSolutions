@@ -1,10 +1,6 @@
 import { useContext } from 'react';
-import { CartContext } from '../context/CartProvider';
+import { CartContext } from '../context/CartProvider'; // Asegúrate de que la ruta sea correcta
 
-export const useAuth = () => {
-	const { cart } = useContext(CartContext);
-
-	return {
-		cart,
-	};
+export const useCart = () => {
+  return useContext(CartContext);
 };
